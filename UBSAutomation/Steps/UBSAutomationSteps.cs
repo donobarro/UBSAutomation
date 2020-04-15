@@ -9,14 +9,14 @@ namespace UBSAutomation.Steps
     [Binding]
     public class UBSAutomationSteps
     {
-        private Pages.Pages pages;
-        private IWebDriver driver;
+        private static IWebDriver driver;
+        private static Pages.Pages pages;
 
-        [Before]
-        public void SetUp()
+        [BeforeFeature]
+        public static void SetUp()
         {
-            this.driver = DriverFactory.GetChromeDriver();
-            this.pages = new Pages.Pages(driver);
+            driver = DriverFactory.GetInstance().GetWebDriver().Value;
+            pages = new Pages.Pages(driver);
             pages.SetUBSCookie();
 
         }
@@ -116,8 +116,8 @@ namespace UBSAutomation.Steps
             Assert.IsTrue(pages.YourLifeGoalsPage().IsYourLifeGoalsHeadingDisplayed());
         }
 
-        [After]
-        public void TearDown()
+        [AfterFeature]
+        public static void TearDown()
         {
             driver.Close();
             driver.Dispose();

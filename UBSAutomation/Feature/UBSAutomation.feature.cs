@@ -331,7 +331,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I select region \'Europe\' and country \'Austria\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 44
- testRunner.Then("I land on the \'Denmark\' HomePage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I land on the \'Austria\' HomePage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
