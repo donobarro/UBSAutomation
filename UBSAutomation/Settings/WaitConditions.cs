@@ -15,7 +15,6 @@ namespace UBSAutomation.Settings
             {
                 try
                 {
-                    Console.WriteLine(element.GetAttribute("style") + " + " + element.GetAttribute("class"));
                     return element != null && !element.Displayed ? element : (IWebElement)null;
 
                 }
